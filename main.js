@@ -14,14 +14,16 @@ const addStyles = (e) => {
 };
 
 const handelQ = (e) => {
-  if (document.querySelectorAll(".show").length > 1) {
-    removeShow();
-    e.target.parentElement.children[1].classList.add("show");
-    addStyles(e);
+  if (e.target.parentElement.children[1].classList.contains("show")) {
+    e.target.parentElement.children[1].classList.remove("show");
+    e.target.querySelector("span").style.borderColor =
+      "red transparent transparent transparent";
+    e.target.querySelector("span").style.top = "5px";
   } else {
     removeShow();
     e.target.parentElement.children[1].classList.add("show");
     addStyles(e);
+    console.log("one");
   }
 };
 
